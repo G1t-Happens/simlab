@@ -89,7 +89,8 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: End-to-end tests
-        run: npm run test:e2e
+        # Firefox on Linux only gets a WebGL context with an X display, even headless
+        run: xvfb-run --auto-servernum npm run test:e2e
 
       - name: Upload Playwright report
         if: failure()
