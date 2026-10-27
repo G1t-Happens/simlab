@@ -1,0 +1,14 @@
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+/.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+
+# Operating systems
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: sim-server
+  jackson:
+    deserialization:
+      # vertex 1.5 is a mistake of the client, not vertex 1
+      accept-float-as-int: false
+  mvc:
+    problemdetails:
+      enabled: true
+
+simlab:
+  lessons:
+    # the code in the lessons links to its lines in this repository, at the commit of the build
+    repository: https://github.com/G1t-Happens/simlab

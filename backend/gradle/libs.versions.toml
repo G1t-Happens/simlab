@@ -1,0 +1,59 @@
+[versions]
+archunit = "1.5.1"
+assertj = "3.27.7"
+errorprone = "2.50.0"
+errorprone-gradle-plugin = "5.1.1"
+gradle-git-properties = "4.0.1"
+jacoco = "0.8.15"
+javaparser = "3.28.2"
+jspecify = "1.0.1"
+junit = "6.1.3"
+nullaway = "0.14.2"
+palantir-java-format = "2.102.0"
+spotless = "8.10.4"
+spring-boot = "4.1.1"
+
+[libraries]
+# Spring Boot: starter versions are managed by the BOM
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+spring-boot-starter-webmvc = { module = "org.springframework.boot:spring-boot-starter-webmvc" }
+spring-boot-starter-websocket = { module = "org.springframework.boot:spring-boot-starter-websocket" }
+spring-boot-starter-actuator-test = { module = "org.springframework.boot:spring-boot-starter-actuator-test" }
+spring-boot-starter-validation-test = { module = "org.springframework.boot:spring-boot-starter-validation-test" }
+spring-boot-starter-webmvc-test = { module = "org.springframework.boot:spring-boot-starter-webmvc-test" }
+spring-boot-starter-websocket-test = { module = "org.springframework.boot:spring-boot-starter-websocket-test" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+
+jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
+
+# reads the sources of sim-core, whose methods the lessons show
+javaparser-core = { module = "com.github.javaparser:javaparser-core", version.ref = "javaparser" }
+# reads the YAML in the lessons. Managed by the Spring Boot BOM since Spring Boot reads its configuration with it
+snakeyaml = { module = "org.yaml:snakeyaml" }
+
+# testing: versionless entries are aligned by the JUnit BOM, in sim-server by the Spring Boot BOM
+archunit-junit6 = { module = "com.tngtech.archunit:archunit-junit6", version.ref = "archunit" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+
+# static analysis, run as javac plugins by Error Prone
+errorprone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "errorprone" }
+errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone" }
+nullaway = { module = "com.uber.nullaway:nullaway", version.ref = "nullaway" }
+
+# Gradle plugins applied by the convention plugins in build-logic
+errorprone-gradle-plugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version.ref = "errorprone-gradle-plugin" }
+spotless-gradle-plugin = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
+
+# tools the convention plugins configure by their version alone. Listed as libraries because Dependabot only
+# updates the versions of libraries and plugins
+jacoco-agent = { module = "org.jacoco:org.jacoco.agent", version.ref = "jacoco" }
+palantir-java-format = { module = "com.palantir.javaformat:palantir-java-format", version.ref = "palantir-java-format" }
+
+[plugins]
+gradle-git-properties = { id = "com.gorylenko.gradle-git-properties", version.ref = "gradle-git-properties" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
